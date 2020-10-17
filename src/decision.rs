@@ -1,7 +1,13 @@
 use crate::structures::{Coordinate, Game, Battlesnake, Board, MoveResponse};
 use crate::functions::{calculate_value, log_data};
-// TODO Logging
+use crate::constants::DRAWING;
+use crate::draw::draw_board;
+
 pub fn decision(game: &Game, turn: i64, board: &Board, you: &Battlesnake) -> MoveResponse {
+
+    if DRAWING {
+        draw_board(board, you, format!("{}", turn));
+    }
 
     let down: Coordinate = you.get_head().down();
     let up: Coordinate = you.get_head().up();

@@ -1,8 +1,9 @@
 use crate::structures::{Coordinate, Board, Battlesnake};
 use image::{RgbImage, Rgb};
 use crate::functions::calculate_value;
+use crate::constants::DRAW_PATH;
 
-pub fn draw_board(board: Board, you: Battlesnake){
+pub fn draw_board(board: &Board, you: &Battlesnake, name: &str){
     let tile_size = 50;
 
     let imgx = tile_size * board.get_width() as u32;
@@ -36,7 +37,7 @@ pub fn draw_board(board: Board, you: Battlesnake){
         draw_food(&mut img, tile_size as i64, tile);
     }
 
-    img.save("testdata/test.png");
+    img.save(format!("{}{}.png", DRAW_PATH, name));
     
 }
 
@@ -120,7 +121,7 @@ mod test_draw{
             String::from("why are we shouting??"),
         );
 
-        draw_board(board, you);
+        draw_board(&board, &you, "Test");
         
         assert!(true);
     }
