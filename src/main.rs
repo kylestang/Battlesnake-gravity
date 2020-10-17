@@ -34,7 +34,7 @@ async fn game_move(data: web::Json<MoveRequest>) -> HttpResponse {
     HttpResponse::Ok().json(decision(data.get_game(), data.get_turn(), data.get_board(), data.get_you()))
 }
 
-#[post("/battlensake/gravity/end")]
+#[post("/battlesnake/gravity/end")]
 async fn end() -> HttpResponse {
     println!("End");
     HttpResponse::Ok().body("")
@@ -49,7 +49,7 @@ async fn main() -> std::io::Result<()> {
             .service(game_move)
             .service(end)
     })
-    .bind("0.0.0.0:25580")?
+    .bind("0.0.0.0:25569")?
     .run()
     .await
 }

@@ -11,7 +11,7 @@ pub fn will_collide(board: &Board, pos: &Coordinate) -> bool{
     }
 
     for snake in board.get_snakes(){
-        for tile in &snake.get_body()[..snake.get_length() as usize - 1] {
+        for tile in &snake.get_body()[1..snake.get_length() as usize - 1] {
             if tile.equals(pos){
                 return true;
             }
