@@ -6,6 +6,7 @@ mod structures;
 mod decision;
 mod constants;
 mod functions;
+mod draw;
 
 #[cfg(test)]
 mod tests;

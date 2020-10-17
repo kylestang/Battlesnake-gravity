@@ -1,6 +1,6 @@
 use actix_web::test;
 use super::*;
-use structures::{Game, Ruleset, Board, Coordinate, Battlesnake};
+use crate::structures::{Game, Ruleset, Board, Coordinate, Battlesnake};
 
 #[actix_rt::test]
 async fn test_index_get() {

@@ -7,11 +7,11 @@ pub const TAIL: &'static str = "default";
 
 // Gravity values
 pub const WALL_G: f64 = 1.0;
-pub const SMALLER_HEAD: f64 = -5.0;
-pub const LARGER_HEAD: f64 = 5.0;
-pub const EQUAL_HEAD: f64 = 2.0;
-pub const SNAKE_BODY: f64 = 1.0;
-pub const FOOD_G: f64 = 3.0;
+pub const SMALLER_HEAD: f64 = -10.0;
+pub const LARGER_HEAD: f64 = 10.0;
+pub const EQUAL_HEAD: f64 = 4.0;
+pub const SNAKE_BODY: f64 = 2.0;
+pub const FOOD_G: f64 = -5.0;
 
 // Execution details
 pub const LOGGING: bool = true;
