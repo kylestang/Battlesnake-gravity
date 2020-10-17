@@ -1,9 +1,9 @@
 // Snake details
 pub const API_VERSION: &'static str = "1";
 pub const AUTHOR: &'static str = "Kyle Stang";
-pub const COLOR: &'static str = "#888888";
-pub const HEAD: &'static str = "default";
-pub const TAIL: &'static str = "default";
+pub const COLOR: &'static str = "#380874";
+pub const HEAD: &'static str = "shac-caffeine";
+pub const TAIL: &'static str = "skinny";
 
 // Gravity values
 pub const WALL_G: f64 = 2.0;
