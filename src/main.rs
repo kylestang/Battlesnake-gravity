@@ -11,7 +11,7 @@ mod draw;
 #[cfg(test)]
 mod tests;
 
-#[get("/")]
+#[get("/battlesnake/gravity")]
 async fn index() -> HttpResponse {
     HttpResponse::Ok().json(IndexResponse::new(
         constants::API_VERSION,
@@ -22,19 +22,19 @@ async fn index() -> HttpResponse {
     ))
 }
 
-#[post("/start")]
+#[post("/battlesnake/gravity/start")]
 async fn start() -> HttpResponse {
     println!("Start");
     HttpResponse::Ok().body("")
 }
 
-#[post("/move")]
+#[post("/battlesnake/gravity/move")]
 async fn game_move(data: web::Json<MoveRequest>) -> HttpResponse {
     println!("Move");
     HttpResponse::Ok().json(decision(data.get_game(), data.get_turn(), data.get_board(), data.get_you()))
 }
 
-#[post("/end")]
+#[post("/battlensake/gravity/end")]
 async fn end() -> HttpResponse {
     println!("End");
     HttpResponse::Ok().body("")

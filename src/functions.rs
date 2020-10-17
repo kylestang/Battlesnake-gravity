@@ -38,13 +38,13 @@ pub fn calculate_value(board: &Board, you: &Battlesnake, pos: &Coordinate) -> Op
     for snake in board.get_snakes(){
         if snake.get_id() != you.get_id(){
             if snake.get_length() > you.get_length(){
-                value += constants::LARGER_HEAD / you.get_head().radius_squared(snake.get_head());
+                value += constants::LARGER_HEAD / pos.radius_squared(snake.get_head());
             }
             else if snake.get_length() < you.get_length(){
-                value += constants::SMALLER_HEAD / you.get_head().radius_squared(snake.get_head());
+                value += constants::SMALLER_HEAD / pos.radius_squared(snake.get_head());
             }
             else {
-                value += constants::EQUAL_HEAD / you.get_head().radius_squared(snake.get_head());
+                value += constants::EQUAL_HEAD / pos.radius_squared(snake.get_head());
             }
         }
 
@@ -69,7 +69,7 @@ pub fn log_data(data: String, file_name: &String) {
         let mut file: File = OpenOptions::new()
             .append(true)
             .create(true)
-            .open(format!("{}{}", constants::LOG_PATH, file_name))
+            .open(format!("{}{}.log", constants::LOG_PATH, file_name))
             .unwrap();
         
         file.write_all(data.as_bytes()).unwrap();
