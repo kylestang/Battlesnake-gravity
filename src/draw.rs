@@ -3,7 +3,7 @@ use image::{RgbImage, Rgb};
 use crate::functions::calculate_value;
 use crate::constants::DRAW_PATH;
 
-pub fn draw_board(board: &Board, you: &Battlesnake, name: &str){
+pub fn draw_board(board: &Board, you: &Battlesnake, name: String){
     let tile_size = 50;
 
     let imgx = tile_size * board.get_width() as u32;
@@ -121,7 +121,7 @@ mod test_draw{
             String::from("why are we shouting??"),
         );
 
-        draw_board(&board, &you, "Test");
+        draw_board(&board, &you, String::from("Test"));
         
         assert!(true);
     }
